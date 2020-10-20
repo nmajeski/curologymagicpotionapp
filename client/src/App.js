@@ -113,7 +113,7 @@ class App extends Component {
 
       if (this.state.errors.length === 0) {
         const resetStateFunc = this.resetState;
-        fetch('/api/magic', {
+        fetch('http://localhost:8080/api/magic', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

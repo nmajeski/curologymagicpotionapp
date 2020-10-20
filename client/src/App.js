@@ -97,9 +97,23 @@ class App extends Component {
       this.validateInputText('ccNum', this.state.ccNum, /^\d{16}$/);
       this.validateInputText('expDate', this.state.expDate, /^(0[1-9]|1[0-2])\/[0-9]{2}$/);
 
+      if (this.state.errors['expDate'] == null) {
+        const now = new Date();
+        const currYear = parseInt((now.getFullYear() + "").substring(2), 10);
+        const currMonth = now.getMonth() + 1;
+        const expMonth = parseInt(this.state.expDate.substring(0, 2), 10);
+        const expYear = parseInt(this.state.expDate.substring(3), 10);
+
+        if (currYear > expYear || (currYear === expYear && currMonth >= expMonth)) {
+          let errorList = this.state.errors;
+          errorList.push('expDate');
+          this.setState({errors: errorList});
+        }
+      }
+
       if (this.state.errors.length === 0) {
         const resetStateFunc = this.resetState;
-        fetch('http://localhost:8080/api/magic', {
+        fetch('/api/magic', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
@@ -163,8 +177,7 @@ class App extends Component {
                 </div>
                 <div className="product-totals">
                   <div>
-                    Quantity:&nbsp; 
-                    <select name="quantity" value={this.state.quantity} onChange={this.onChange}>
+                    Quantity: <select name="quantity" value={this.state.quantity} onChange={this.onChange}>
                       <option value={1}>1</option>
                       <option value={2}>2</option>
                       <option value={3}>3</option>

@@ -1,6 +1,0 @@
-#Tue, 20 Oct 2020 14:34:07 -0500
-
-info.app.version=0.1
-info.app.name=server
-grails.env=production
-info.app.grailsVersion=3.2.4

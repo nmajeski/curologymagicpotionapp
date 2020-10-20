@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Start-Class: curologymagicpotionapp.Application
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Spring-Boot-Version: 1.4.2.RELEASE
+Main-Class: org.springframework.boot.loader.WarLauncher
+

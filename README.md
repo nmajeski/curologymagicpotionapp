@@ -34,37 +34,37 @@ The schema of the project is made up of three tables:
 ADDRESS
 -------
 FIELD                   TYPE  	        NULLABLE
-ID	                    BIGINT(19)	    NO	
-VERSION	                BIGINT(19)	    NO
-CITY	                VARCHAR(255)	NO
-MAGIC_POTION_ORDER_ID	BIGINT(19)	    NO
-STATE	                VARCHAR(255)	NO
-STREET1	                VARCHAR(255)	NO
-STREET2	                VARCHAR(255)	NO
-ZIP	                    VARCHAR(255)	NO
+ID                      BIGINT(19)      NO	
+VERSION                 BIGINT(19)      NO
+CITY                    VARCHAR(255)    NO
+MAGIC_POTION_ORDER_ID   BIGINT(19)      NO
+STATE                   VARCHAR(255)    NO
+STREET1                 VARCHAR(255)    NO
+STREET2                 VARCHAR(255)    NO
+ZIP                     VARCHAR(255)    NO
 
 MAGIC_POTION_ORDER
 ------------------
 FIELD  	            TYPE  	        NULLABLE 
-ID	                BIGINT(19)	    NO
-VERSION	            BIGINT(19)	    NO
-CREATED_DATETIME	TIMESTAMP(23)	NO
-EMAIL	            VARCHAR(255)	NO
-FIRST_NAME	        VARCHAR(255)	NO
-FULFILLED	        BOOLEAN(1)	    NO
-LAST_NAME	        VARCHAR(255)	NO
-PHONE	            VARCHAR(255)	NO
-QUANTITY	        INTEGER(10)	    NO
-TOTAL	            VARCHAR(255)	NO
+ID                  BIGINT(19)      NO
+VERSION             BIGINT(19)      NO
+CREATED_DATETIME    TIMESTAMP(23)   NO
+EMAIL               VARCHAR(255)    NO
+FIRST_NAME          VARCHAR(255)    NO
+FULFILLED           BOOLEAN(1)      NO
+LAST_NAME           VARCHAR(255)    NO
+PHONE               VARCHAR(255)    NO
+QUANTITY            INTEGER(10)     NO
+TOTAL               VARCHAR(255)    NO
 
 PAYMENT
 -------
 FIELD  	                TYPE  	        NULL
-ID	                    BIGINT(19)	    NO
-VERSION	                BIGINT(19)	    NO
-CC_NUM	                VARCHAR(255)	NO
-EXP	                    VARCHAR(255)	NO
-MAGIC_POTION_ORDER_ID	BIGINT(19)	    NO
+ID                      BIGINT(19)      NO
+VERSION                 BIGINT(19)      NO
+CC_NUM                  VARCHAR(255)    NO
+EXP                     VARCHAR(255)    NO
+MAGIC_POTION_ORDER_ID   BIGINT(19)      NO
 ```
 
 None of the fields are nullable, although I debated whether or not to make address line 2 nullable. Also, I decided to separate out the tables in case the payment or address information wanted to be shared across multiple types of orders (not just a Magic Potion order).

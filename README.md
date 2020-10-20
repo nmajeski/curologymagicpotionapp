@@ -45,7 +45,7 @@ ZIP                     VARCHAR(255)    NO
 
 MAGIC_POTION_ORDER
 ------------------
-FIELD  	            TYPE  	        NULLABLE 
+FIELD  	            TYPE            NULLABLE 
 ID                  BIGINT(19)      NO
 VERSION             BIGINT(19)      NO
 CREATED_DATETIME    TIMESTAMP(23)   NO
@@ -59,7 +59,7 @@ TOTAL               VARCHAR(255)    NO
 
 PAYMENT
 -------
-FIELD  	                TYPE  	        NULL
+FIELD  	                TYPE  	        NULLABLE
 ID                      BIGINT(19)      NO
 VERSION                 BIGINT(19)      NO
 CC_NUM                  VARCHAR(255)    NO

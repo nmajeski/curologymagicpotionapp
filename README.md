@@ -98,3 +98,4 @@ I would do a few things differently next time. Firstly, I would organize the cod
 - Upgrade Grails version
 - Have a better code organization
 - Add unit tests for functions with 100% line coverage
+- Make page responsive (better able to fit on a mobile device)
